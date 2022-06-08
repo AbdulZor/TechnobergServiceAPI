@@ -21,14 +21,14 @@ namespace TechnobergServiceAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<User>> GetUsers()
+        public IActionResult GetUsers()
         {
             ICollection<User> users = _context.User.ToList();
             return Ok(users);
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> CreateUser(User user)
+        public IActionResult CreateUser(User user)
         {
             _context.User.Add(user);
             _context.SaveChanges();

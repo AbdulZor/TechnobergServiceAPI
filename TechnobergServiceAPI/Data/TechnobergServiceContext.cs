@@ -26,7 +26,7 @@ namespace TechnobergServiceAPI.Data
 
             modelBuilder.Entity<Device>(entity => {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.DeviceId).IsRequired();
+                entity.Property(e => e.DeviceToken).IsRequired();
                 entity.HasOne(d => d.User)
                 .WithMany(p => p.Devices);
             });
